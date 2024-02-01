@@ -1,6 +1,8 @@
 <queries>
   <query name="us.ct.k12.tolland.devicekiosk.students.get_home_room">
-    <arg name="studentNumber" required="true" description="Student Number" type="primitive"/>
+    <args>
+        <arg name="studentNumber" required="true" description="Student Number" type="primitive" column="students.student_number"/>
+    </args>    
     <columns>
       <column column="students.home_room">aliasstudents.aliashomeroom</column>
     </columns>
