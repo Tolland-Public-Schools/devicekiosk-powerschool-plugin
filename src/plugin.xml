@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+        name="Device Kiosk Plugin"
+        description="Device Kiosk PowerSchool Queries"
+        version="1.0.0">
+   <oauth></oauth>	
+   <publisher name="Tolland Public Schools">
+        <contact email="asher@tolland.k12.ct.us" />
+    </publisher>
+</plugin>

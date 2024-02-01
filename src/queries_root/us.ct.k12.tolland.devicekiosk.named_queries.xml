@@ -1,0 +1,12 @@
+<queries>
+  <query name="us.ct.k12.tolland.devicekiosk.students.get_home_room">
+    <arg name="studentNumber" required="true" description="Student Number" type="primitive"/>
+    <columns>
+      <column column="students.home_room">aliasstudents.aliashomeroom</column>
+    </columns>
+    <sql><![CDATA[
+       select home_room from students where student_number = :studentNumber
+    ]]></sql>
+  </query>
+  <!-- Define more queries here -->
+</queries>
