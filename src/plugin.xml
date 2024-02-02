@@ -5,8 +5,18 @@
         name="Device Kiosk Plugin"
         description="Device Kiosk PowerSchool Queries"
         version="1.0.0">
-   <oauth></oauth>	
-   <publisher name="Tolland Public Schools">
+   <oauth></oauth>
+   <access_request>
+    <field table="students" field="dcid" access="ViewOnly"/>
+    <field table="students" field="student_number" access="ViewOnly"/>
+    <field table="students" field="home_room" access="ViewOnly"/>
+    <!-- <field table="students" field="student_number" access="FullAccess"/>
+    <field table="students" field="home_room" access="FullAccess"/> -->
+  </access_request>
+    <autoinstall required="true">
+        <autoredeploy />
+    </autoinstall>	
+    <publisher name="Tolland Public Schools">
         <contact email="asher@tolland.k12.ct.us" />
     </publisher>
 </plugin>

@@ -1,13 +1,15 @@
 <queries>
-  <query name="us.ct.k12.tolland.devicekiosk.students.get_home_room">
+  <query name="us.ct.k12.tolland.devicekiosk.students.get_home_room" flattened="true">
+  <summary>Device Kiosk Homeroom from Student Number</summary>
     <args>
         <arg name="studentNumber" required="true" description="Student Number" type="primitive" column="students.student_number"/>
     </args>    
     <columns>
-      <column column="students.home_room">aliasstudents.aliashomeroom</column>
+        <!-- <column column="students.id">students.home_room</column> -->
+        <column>students.home_room</column>
     </columns>
     <sql><![CDATA[
-       select home_room from students where student_number = :studentNumber
+       select students.home_room from students where students.student_number = :studentNumber
     ]]></sql>
   </query>
   <!-- Define more queries here -->
