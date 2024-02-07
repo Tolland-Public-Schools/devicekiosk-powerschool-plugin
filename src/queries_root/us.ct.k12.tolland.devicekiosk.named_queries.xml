@@ -12,5 +12,20 @@
        select students.home_room from students where students.student_number = :studentNumber
     ]]></sql>
   </query>
+  <query name="us.ct.k12.tolland.devicekiosk.students.get_schedule" flattened="true">
+  <summary>Device Kiosk Schedule from Student Number</summary>
+    <args>
+        <arg name="studentNumber" required="true" description="Student Number" type="primitive" column="students.student_number"/>
+        <arg name="terms" required="true" description="Array of Term IDs" type="array" column="SECTIONS.termid"/>
+    </args>    
+    <columns>
+        <column>SECTIONS.external_expression</column>
+        <column>TEACHERS.Last_Name</column>
+        <column>SECTIONS.Room</column>
+    </columns>
+    <sql><![CDATA[
+      SELECT SECTIONS.external_expression, TEACHERS.Last_Name, SECTIONS.Room FROM CC JOIN SECTIONS on CC.sectionID = SECTIONS.ID JOIN TEACHERS on TEACHERS.ID = CC.teacherID JOIN STUDENTS on STUDENTS.ID = CC.studentID WHERE CC.studentID in (SELECT STUDENTS.ID from STUDENTS WHERE STUDENTS.Student_Number = :studentNumber) AND SECTIONS.termid in (:terms) ORDER BY sections.external_expression ASC
+    ]]></sql>
+  </query>
   <!-- Define more queries here -->
 </queries>

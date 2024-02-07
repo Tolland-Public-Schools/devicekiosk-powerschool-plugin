@@ -4,12 +4,22 @@
         xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
         name="Device Kiosk Plugin"
         description="Device Kiosk PowerSchool Queries"
-        version="1.0.0">
+        version="1.1.0">
    <oauth></oauth>
    <access_request>
     <field table="students" field="dcid" access="ViewOnly"/>
     <field table="students" field="student_number" access="ViewOnly"/>
     <field table="students" field="home_room" access="ViewOnly"/>
+    <field table="students" field="id" access="ViewOnly"/>
+    <field table="CC" field="studentID" access="ViewOnly"/>
+    <field table="CC" field="teacherID" access="ViewOnly"/>
+    <field table="CC" field="sectionID" access="ViewOnly"/>
+    <field table="SECTIONS" field="ID" access="ViewOnly"/>
+    <field table="SECTIONS" field="Room" access="ViewOnly"/>
+    <field table="SECTIONS" field="external_expression" access="ViewOnly"/>
+    <field table="SECTIONS" field="termid" access="ViewOnly"/>
+    <field table="TEACHERS" field="ID" access="ViewOnly"/>
+    <field table="TEACHERS" field="Last_Name" access="ViewOnly"/>    
     <!-- <field table="students" field="student_number" access="FullAccess"/>
     <field table="students" field="home_room" access="FullAccess"/> -->
   </access_request>
